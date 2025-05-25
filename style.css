@@ -1,3 +1,4 @@
+> courtizen:
 .container {
   display: flex;
   justify-content: center;
@@ -50,4 +51,23 @@
 .container .card .face .content i {
   font-size: 3em;
   color: white;
+}
+
+> courtizen:
+.container .card .face.face1 {
+  transform: translateY(100px);
+  z-index: 1;
+}
+
+.container .card:hover .face.face1 {
+  transform: translateY(0);
+}
+
+.container .card .face.face2 {
+  transform: translateY(0);
+  z-index: 0;
+}
+
+.container .card:hover .face.face2 {
+  transform: translateY(-100px);
 }
