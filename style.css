@@ -2,87 +2,92 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f2f2f2;
+  background: #f1f1f1;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+h1 span {
+  color: #ff5f00;
 }
 
 .container {
   display: flex;
+  justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .card {
-  position: relative;
   width: 200px;
   height: 200px;
-  cursor: pointer;
+  position: relative;
   perspective: 1000px;
-  transition: 0.5s;
 }
 
 .card .face {
-  position: absolute;
   width: 100%;
   height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease, opacity 0.5s ease;
   display: flex;
   justify-content: center;
   align-items: center;
-  backface-visibility: hidden;
-  transition: 0.5s;
-  border-radius: 10px;
 }
 
 .card .face.face1 {
-  background: #ff0057;
+  z-index: 2;
   color: #fff;
-  transform: translateY(-100px);
-  z-index: 1;
+  transform: translateY(0);
 }
 
 .card:hover .face.face1 {
-  transform: translateY(0px);
+  transform: translateY(100px);
+  z-index: 0;
+}
+
+.card .face.face1 .icon i {
+  font-size: 60px;
 }
 
 .card .face.face2 {
   background: #fff;
   color: #333;
   padding: 20px;
-  transform: translateY(100px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-.card:hover .face.face2 {
-  transform: translateY(0px);
-}
-
-.card .icon i {
-  font-size: 3em;
-  color: white;
-}
-
-.card .face.face2 .content {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(-100px);
   text-align: center;
 }
 
-.card .face.face2 .content h3 {
-  margin-bottom: 10px;
-  font-size: 1.2em;
-  color: #ff0057;
+.card:hover .face.face2 {
+  transform: translateY(0);
+  opacity: 1;
 }
 
-.card .face.face2 .content a {
+.card .face.face2 h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card .face.face2 a {
   text-decoration: none;
-  color: #333;
+  color: #ff5f57;
   font-weight: bold;
 }
 
-.card .face.face2 .content p {
-  font-size: 0.9em;
+.card .face.face2 p {
+  font-size: 14px;
+  color: #555;
 }
