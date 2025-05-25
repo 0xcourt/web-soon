@@ -6,13 +6,9 @@
 }
 
 body {
-  background-image: url('https://static.vecteezy.com/system/resources/previews/006/852/804/non_2x/abstract-blue-background-simple-design-for-your-website-free-vector.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  background: #f1f1f1;
   text-align: center;
-  font-family: sans-serif;
+  padding: 50px 20px;
 }
 
 h1 {
